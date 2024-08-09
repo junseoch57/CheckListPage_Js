@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'SUITE-Regular';
+    font-family: 'SUITE-Regular',sans-serif;
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
@@ -10,6 +10,7 @@ body {
     background-color: #c7ebf3;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'SUITE-Regular',sans-serif;
 }
 
 .container {
