@@ -107,6 +107,10 @@ const toggleChecklist = (listId) => {
 // 체크된 항목 modal로 표시
 const showCheckedItems = () => {
     const modal = document.querySelector('.checked-list-modal');
+    const container = document.querySelector('.container');
+    const tipsContainer = document.querySelector('.tips-container');
+    const categoryBoxes = document.querySelectorAll('.category-box');
+
     const allCheckboxes = document.querySelectorAll('.checkbox');
     const checkedItems = Array.from(allCheckboxes).filter(checkbox => checkbox.checked);
     const checkedList = checkedItems.map(item => item.parentElement.innerText.trim());
@@ -115,10 +119,23 @@ const showCheckedItems = () => {
     checkedItemsList.innerHTML = checkedList.map(item => `<li>${item}</li>`).join('');
 
     modal.style.display = 'block';
+  
+    container.style.filter = 'blur(3px)';  // 배경 흐리게
+   
+    categoryBoxes.forEach(box => box.style.filter = 'blur(3px)');
 }
 
 // modal 닫기
 const closeModal = () => {
     const modal = document.querySelector('.checked-list-modal');
+    const container = document.querySelector('.container');
+    const tipsContainer = document.querySelector('.tips-container');
+    const categoryBoxes = document.querySelectorAll('.category-box');
+
     modal.style.display = 'none';
+
+    container.style.filter = 'none';
+    tipsContainer.style.filter = 'none';
+    categoryBoxes.forEach(box => box.style.filter = 'none');
+
 }
